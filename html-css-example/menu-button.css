@@ -1,0 +1,46 @@
+menu-button {
+  display: inline-block;
+  /* position: relative; */
+}
+
+menu-button>button {
+  background: #ddd;
+  padding: 5px 10px;
+  position: relative;
+}
+
+menu-button>button>label {
+  position: absolute;
+  inset: 0;
+}
+
+menu-button>button>label:has(:checked) {
+  position: fixed;
+  z-index: 1;
+}
+
+menu-button label {
+  cursor: pointer;
+}
+
+menu-button>button>ul {
+  position: absolute;
+  z-index: 1;
+  background: #ddd;
+  transform: translateY(7px);
+}
+
+menu-button>button>:not(:has(:checked))+ul {
+  display: none;
+}
+
+menu-button>button>ul>li {
+  padding: 5px 10px;
+  width: max-content;
+}
+
+menu-button>button>ul>hr {
+  height: 1px;
+  background: #aaa;
+  margin: 5px 0;
+}
