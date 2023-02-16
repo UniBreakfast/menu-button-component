@@ -12,10 +12,173 @@
 
   <!-- <script src="script.js" defer></script> -->
 
-  <title>Menu Button</title>
+  <title>Menu Button interactive</title>
 </head>
 
 <body id="body">
+  <form>
+    <label>
+      <input type="checkbox" id="reset" checked>
+      reset browser default styles
+    </label>
+
+    <hr>
+
+    <fieldset>
+      <pre
+        ><code
+          ><b>menu-button</b> {
+            <label
+              ><input type="checkbox" id="mb-inline" checked
+              ><b>inline-block;</b
+            ></label
+          ><br>}<br><br
+
+          ><b>menu-button>button</b> {
+            <label
+              ><input type="checkbox" id="btn-bg" checked
+              ><b>background: #ddd;</b
+            ></label
+
+            ><label
+              ><input type="checkbox" id="btn-pad" checked
+              ><b>padding: 5px 10px;</b
+            ></label
+  
+            ><label
+              ><input type="checkbox" id="btn-relative" checked
+              ><b>position: relative;</b
+            ></label
+          ><br>}<br><br
+
+          ><b>menu-button>button>label</b> {
+            <label
+              ><input type="checkbox" id="label-absolute" checked
+              ><b>position: absolute;</b
+            ></label
+  
+            ><label
+              ><input type="checkbox" id="label-inset" checked
+              ><b>inset: 0;</b
+            ></label
+          ><br>}<br><br
+
+          ><b>menu-button>button>label:has(:checked)</b> {
+            <label
+              ><input type="checkbox" id="label-fixed" checked
+              ><b>position: fixed;</b
+            ></label
+  
+            ><label
+              ><input type="checkbox" id="label-index" checked
+              ><b>z-index: 1;</b
+            ></label
+          ><br>}<br><br
+
+          ><b>menu-button label</b> {
+            <label
+              ><input type="checkbox" id="label-cursor" checked
+              ><b>cursor: pointer;</b
+            ></label
+          ><br>}
+        </code>
+      </pre>
+
+      <pre
+        ><code
+          ><b>menu-button>button>ul</b> {
+            <label
+              ><input type="checkbox" id="ul-absolute" checked
+              ><b>position: absolute;</b
+            ></label
+            
+            ><label
+              ><input type="checkbox" id="ul-index" checked
+              ><b>z-index: 1;</b
+            ></label
+            
+            ><label
+              ><input type="checkbox" id="ul-bg" checked
+              ><b>background: #ddd;</b
+            ></label
+            
+            ><label
+              ><input type="checkbox" id="ul-transform" checked
+              ><b>transform: translateY(7px);</b
+            ></label
+          ><br>}<br><br
+
+          ><b>menu-button>button>:not(:has(:checked))+ul</b> {
+            <label
+              ><input type="checkbox" id="ul-none" checked
+              ><b>display: none;</b
+            ></label
+          ><br>}<br><br
+
+          ><b>menu-button>button>ul>li</b> {
+            <label
+              ><input type="checkbox" id="li-pad" checked
+              ><b>padding: 5px 10px;</b
+            ></label
+            
+            ><label
+              ><input type="checkbox" id="li-width" checked
+              ><b>width: max-content;</b
+            ></label
+          ><br>}<br><br
+
+          ><b>menu-button>button>ul>hr</b> {
+            <label
+              ><input type="checkbox" id="hr-height" checked
+              ><b>height: 1px;</b
+            ></label
+            
+            ><label
+              ><input type="checkbox" id="hr-bg" checked
+              ><b>background: #aaa;</b
+            ></label
+  
+            ><label
+              ><input type="checkbox" id="hr-margin" checked
+              ><b>margin: 5px 0;</b
+            ></label
+          ><br>}
+        </code>
+      </pre>
+
+      <pre
+        ><code id="boxContainer"
+          ><b>JS handlers</b>:
+            <label
+              ><input type="checkbox" id="jsClick" checked
+              ><b>require mousedown to drag / mouseup to drop</b
+            ></label
+            
+            ><label
+              ><input type="checkbox" id="jsTarget" checked
+              ><b>check if bar is the target</b
+            ></label
+            
+            ><label
+              ><input type="checkbox" id="jsOffset" checked
+              ><b>take offset into account</b
+            ></label
+  
+            ><label
+              ><input type="checkbox" id="jsCollide" checked
+              ><b>handle border collision</b
+            ></label
+  
+            ><label
+              ><input type="checkbox" id="jsResize" checked
+              ><b>push by border on viewport resize</b
+            ></label
+          >
+        </code>
+      </pre>
+    </fieldset>
+  </form>
+
   <menu-button data-side='down'>
     <button>
       <span>menu button</span>
@@ -58,7 +221,7 @@
       labels.forEach((label, i) => {
         label.textContent = variant + (Math.random() < 0.2 ? ' a very long' : '') + ' item ' + (i + 1)
       })
-    }, 1000)
+    }, 1000_000)
 
     function next() {
       return i = (i + 1) % variants.length

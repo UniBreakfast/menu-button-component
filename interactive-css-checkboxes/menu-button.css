@@ -1,0 +1,102 @@
+/** menu-button **/
+@media screen {
+  #body:has(#mb-inline:checked) menu-button {
+    display: inline-block;
+  }
+}
+
+/** menu-button **/
+@media screen {
+  #body:has(#btn-bg:checked) menu-button>button {
+    background: #ddd;
+  }
+
+  #body:has(#btn-pad:checked) menu-button>button {
+    padding: 5px 10px;
+  }
+
+  #body:has(#btn-relative:checked) menu-button>button {
+    position: relative;
+  }
+}
+
+/** menu-button>button>label **/
+@media screen {
+  #body:has(#label-absolute:checked) menu-button>button>label {
+    position: absolute;
+  }
+
+  #body:has(#label-inset:checked) menu-button>button>label {
+    inset: 0;
+  }
+}
+
+/** menu-button>button>label:has(:checked) **/
+@media screen {
+  #body:has(#label-fixed:checked) menu-button>button>label:has(:checked) {
+    position: fixed;
+  }
+
+  #body:has(#label-index:checked) menu-button>button>label:has(:checked) {
+    z-index: 1;
+  }
+}
+
+/** menu-button label **/
+@media screen {
+  #body:has(#label-cursor:checked) menu-button label {
+    cursor: pointer;
+  }
+}
+
+/** menu-button>button>ul **/
+@media screen {
+  #body:has(#ul-absolute:checked) menu-button>button>ul {
+    position: absolute;
+  }
+
+  #body:has(#ul-index:checked) menu-button>button>ul {
+    z-index: 1;
+  }
+
+  #body:has(#ul-bg:checked) menu-button>button>ul {
+    background: #ddd;
+  }
+
+  #body:has(#ul-transform:checked) menu-button>button>ul {
+    transform: translateY(7px);
+  }
+}
+
+/** menu-button>button>:not(:has(:checked))+ul **/
+@media screen {
+  #body:has(#ul-none:checked) menu-button>button>:not(:has(:checked))+ul {
+    display: none;
+  }
+}
+
+/** menu-button>button>ul>li **/
+@media screen {
+  #body:has(#li-pad:checked) menu-button>button>ul>li {
+    padding: 5px 10px;
+  }
+
+  #body:has(#li-width:checked) menu-button>button>ul>li {
+    width: max-content;
+  }
+}
+
+/** menu-button>button>ul>hr **/
+@media screen {
+  #body:has(#hr-height:checked) menu-button>button>ul>hr {
+    height: 1px;
+  }
+
+  #body:has(#hr-bg:checked) menu-button>button>ul>hr {
+    background: #aaa;
+  }
+
+  #body:has(#hr-margin:checked) menu-button>button>ul>hr {
+    margin: 5px 0;
+  }
+}
