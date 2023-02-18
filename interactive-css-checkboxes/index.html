@@ -416,8 +416,6 @@
     const btn = document.currentScript.previousElementSibling
     const span = btn.querySelector('span')
     const labels = btn.querySelectorAll('li>label')
-    const variants = ['down', 'down-left', 'down-right', 'up', 'up-left', 'up-right', 'left', 'left-up', 'left-down', 'right', 'right-up', 'right-down', 'own-center', 'center']
-    let i = 0
 
     document.currentScript.remove()
 
@@ -433,23 +431,6 @@
           label.textContent = variant + (Math.random() < 0.2 ? ' a very long' : '') + ' item ' + (i + 1)
         })
       }
-    }
-
-    setInterval(() => {
-      if (btn.matches(':hover')) return
-
-      const variant = variants[next(i)]
-
-      btn.dataset.side = variant
-      span.textContent = 'menu button ' + variant
-
-      labels.forEach((label, i) => {
-        label.textContent = variant + (Math.random() < 0.2 ? ' a very long' : '') + ' item ' + (i + 1)
-      })
-    }, 1000_000)
-
-    function next() {
-      return i = (i + 1) % variants.length
     }
   </script>
 
