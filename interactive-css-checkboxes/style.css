@@ -10,7 +10,7 @@
   user-select: none;
 }
 
-#body:has(#reset) label {
+#body:has(#reset) pre :not(b)>label {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -29,4 +29,8 @@
 
 #body:has(#reset) pre {
   font-family: monospace;
+}
+
+#body:has(#reset) code b:not(:has(:checked))+span {
+  display: none;
 }
