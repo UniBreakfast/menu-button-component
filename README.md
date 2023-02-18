@@ -6,3 +6,5 @@ This is a simple example of a menu button component. It is a button that opens a
 ### [interactive CSS checkboxes and radios for better understanding](https://unibreakfast.github.io/menu-button-component/interactive-css-checkboxes) ([code](https://github.com/UniBreakfast/menu-button-component/tree/master/interactive-css-checkboxes))
 ### [functional component usage example](https://unibreakfast.github.io/menu-button-component/use-functional-component) ([code](https://github.com/UniBreakfast/menu-button-component/tree/master/use-functional-component))
 ### [class component usage example](https://unibreakfast.github.io/menu-button-component/use-class-component) ([code](https://github.com/UniBreakfast/menu-button-component/tree/master/use-class-component))
+
+![image](https://user-images.githubusercontent.com/19654456/219903772-78b8c904-a72c-4e29-9616-8f81eaef4ecc.png)
