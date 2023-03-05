@@ -1,0 +1,3 @@
+If you use 'menu-button-pkg.js' then there's no need for other js of css files for it to work. It's all in one file.
+
+Otherwise, you'll need to include 'menu-button.js' and 'menu-button.css' both.

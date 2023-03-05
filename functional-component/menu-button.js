@@ -1,10 +1,10 @@
-function makeMenuButton(items, side) {
+function makeMenuButton(label, items, side) {
   const menuBtn = document.createElement('menu-button')
 
   menuBtn.dataset.side = side
   menuBtn.innerHTML = `
     <button>
-      <span>open menu towards ${side}</span>
+      <span>${label}</span>
       <label><input type="checkbox" hidden></label>
 
       <ul>${

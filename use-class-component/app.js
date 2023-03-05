@@ -1,3 +1,6 @@
+// import { MenuButton } from '../class-component/menu-button.js';
+import { MenuButton } from '../class-component/menu-button-pkg.js';
+
 const creatures = [
   'unchained hob', 'impalpable guardian', 'vivid bogle', 'blind shit', 'vile wraith', 'shifty cloud', 'famed beast', 'agitated follower', 'wild rider', 'elder slime', 'screaming peng', 'apt hob', 'gorgeous kobold', 'morphic numen', 'random archmage', 'phasing minotaur', 'wire cyclops', 'friendly oni', 'dubious elf', 'screamy gnome', 'fire bird', 'ionic prophet', 'crude kin', 'sour titan', 'bold daemon', 'glacial harpy', 'devoted wizard', 'leaf badger', 'wood efreet', 'crazy endrega', 'apt kobold', 'void hawk', 'horadric mimic', 'jagged demidog', 'vile stalker', 'bolt spirit', 'exalted archmage', 'sharp elf', 'angelic tennin', 'rattle visionary', 'spirit king', 'magma cyclops', 'violent gnome', 'faithful beast', 'spinning monkey', 'lava nadir', 'eerie hound', 'juicy pegasus', 'reality midget', 'frantic endrega', 'twisted illusion', 'true scout', 'evil frog', 'angry demidog', 'cream wraith', 'war leprechaun', 'carrion avatar', 'helpless spriggan', 'white zephyr', 'blink pard', 'spark menace', 'fiery witcher', 'talkative servo', 'fiber voice', 'false midget', 'feather peng', 'natural postman', 'fluffy golem', 'dust wyrm', 'bloody truth', 'fog siren', 'ravenous welkin', 'ghost kami', 'eager elfin', 'hopeful husk', 'sun cerberus', 'insane vampire', 'burning numen', 'mirror ryu', 'mythic amazon', 'savage architect', 'jade cerberus', 'armored werecat',
   'thunder roc', 'snow star', 'copper creeper', 'gifted paradox', 'eldrich cube', 'dirty nekker', 'meat paladin', 'unchained behemoth', 'sun raptor', 'mud vine', 'twin cobra', 'unchained gremlin', 'jagged vibria', 'foil mamune', 'clever elf', 'ferocious trader', 'vapor gremlin', 'timber slime', 'obsidian werewolf', 'time reflection', 'insane wasp', 'sinister construct', 'horadric wanderer', 'death shape', 'lovely thief', 'foil leech', 'sacred mimic', 'spooky midget', 'static scamp', 'time postman', 'lake repulsor', 'magnetic angel', 'grim bat', 'tearful slime', 'funky raven', 'natural champion', 'ghost knocker', 'mirror storm', 'weird raven', 'uncanny figure', 'happy wizard', 'shapeless figure', 'razor chimera', 'brass wolf', 'bold kikimora', 'steam drow', 'caped lutin', 'fabled blade', 'furry sculptor', 'screamy repulsor', 'intangible kitty', 'subtle twin', 'impure gremlin', 'gray cobra', 'omniscient essence', 'lava fantasy', 'fiery carbuncle', 'foil duke', 'gorgeous idol', 'carbon leshen', 'omniscient sculptor', 'hectic master', 'insane steed', 'beautiful cleric', 'crazy oak', 'flawed lurker', 'curious spriggan', 'clever welkin', 'eldrich eagle', 'false tree', 'wise draconid', 'void jellyfish', 'prime power', 'forest slayer', 'mirror striga', 'hazy carbuncle', 'morphic seraph', 'huge drowner', 'feather duke', 'immortal shape', 'spectral power',
@@ -13,14 +16,13 @@ const creatures = [
 ]
 const sides = ['down', 'down-left', 'down-right', 'left', 'left-up', 'left-down', 'right', 'right-up', 'right-down', 'up', 'up-left', 'up-right', 'own-center', 'center']
 
-for (let i = 0; i < sides.length; i++) {
-  const j = creatures.length - (i * 10 + 8)
+for (const side of sides) {
+  const label = `open menu towards ${side}`
+  const menuBtn = new MenuButton(body, label, side)
+  const items = creatures.splice(-10)
+    .toSpliced(6, 0, null).toSpliced(3, 0, null)
 
-  creatures[j] += ' with the very long name'
+  items[8] += ' with the very long name'
+
+  menuBtn.list(items)
 }
-
-body.append(...sides.map(side => makeMenuButton(
-  `open menu towards ${side}`,
-  creatures.splice(-10).toSpliced(6, 0, null).toSpliced(3, 0, null),
-  side
-)))
