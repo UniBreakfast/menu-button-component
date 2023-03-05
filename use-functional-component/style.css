@@ -5,5 +5,13 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding-left: 10vw;
+  padding-left: 15vw;
+}
+
+[data-side^="down"], [data-side^="right"], [data-side$="center"] {
+  margin-right: 30vw;
+}
+
+menu-button ul {
+  box-shadow: 0 0 2px 1px white;
 }
