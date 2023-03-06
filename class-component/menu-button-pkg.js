@@ -29,6 +29,8 @@ class MenuButton {
 
   list(arr) {
     this.element.replaceChildren(...arr.map(item => {
+      if (!item) return document.createElement('hr')
+      
       const li = document.createElement('li')
       const label = document.createElement('label')
 
